@@ -1,0 +1,361 @@
+/* Font: Barlow Semi Condensed (600/700) */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+/* Resets and Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* End of Resets and Global Styles */
+
+/* HEADER */
+header {
+  border: 2px solid #5b6b85;
+  border-radius: 20px;
+  padding: 15px 20px;
+  width: 700px;
+
+  max-width: 85%;
+  margin: 40px auto 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+header h1 {
+  font-size: 1.75rem;
+}
+header span {
+  display: block;
+  line-height: 0.8;
+  letter-spacing: 2px;
+}
+
+header .score-container {
+  padding: 10px 5px 5px;
+  background-color: white;
+  width: 160px;
+  max-width: 30%;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+header h4 {
+  color: hsl(229, 64%, 46%);
+}
+
+header .score {
+  font-size: 4rem;
+  color: hsl(229, 25%, 31%);
+}
+
+/* Picks Styling */
+.game-step1 .img-container,
+.game-step2 .img-container {
+  height: 75%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: inset 0 7px 0 0 rgb(206, 205, 205);
+  border-radius: 50%;
+}
+
+.gradient-border {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper {
+  background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.scissors {
+  background: linear-gradient(hsl(39, 89%, 55%), hsl(40, 84%, 49%));
+}
+
+.rock {
+  background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+/* Game: Step 1 */
+
+.game-step1 {
+  width: 550px;
+  max-width: 85%;
+  margin: 0 auto;
+  position: relative;
+  background: url("./images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center 60px;
+
+  height: 350px;
+}
+
+.game-step1.hide-step {
+  display: none;
+}
+.game-step1 .gradient-border {
+  position: absolute;
+  cursor: pointer;
+}
+
+.game-step1 .paper {
+  left: 25%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.game-step1 .scissors {
+  right: 25%;
+  top: 0;
+  transform: translateX(50%);
+}
+
+.game-step1 .rock {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Game Step 2 */
+.game-step2 {
+  margin: 100px auto;
+  padding: 0 15px;
+  display: none;
+}
+
+.game-step2.show {
+  display: block;
+}
+.desktop-layout {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  column-gap: 80px;
+}
+
+.mobile-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
+}
+
+.mobile-layout .choices-container {
+  width: 100%;
+  display: flex;
+  column-gap: 45px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.game-step2 .choice-container {
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 20px;
+}
+
+.game-step2 .result {
+  text-transform: uppercase;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.play-again {
+  width: 230px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  color: hsl(229, 25%, 31%);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 1.3rem;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.play-again:hover {
+  outline: 1px solid white;
+  color: white;
+  background-color: transparent;
+}
+.game-step2 h3 {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.game-step2 h3 span {
+  display: block;
+}
+
+.game-step2 .big-circle-container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Rules Styling */
+.rules-btn {
+  display: block;
+  text-transform: uppercase;
+  border: 2px solid white;
+  background: transparent;
+  padding: 8px 0;
+  width: 140px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin: 100px auto 30px;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.rules-btn:hover {
+  color: hsl(229, 25%, 31%);
+  background-color: white;
+}
+
+.rules-modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: visibility 0s, background-color 0.4s ease-out;
+  visibility: hidden;
+}
+
+.rules-modal-container.show {
+  background-color: rgba(41, 41, 41, 0.438);
+  visibility: visible;
+}
+
+.rules-modal {
+  width: 550px;
+  max-width: 100%;
+  background-color: white;
+
+  height: 100%;
+  text-align: center;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+  transition: opacity 0.6s ease-out;
+  opacity: 0;
+}
+
+.rules-modal-container.show .rules-modal {
+  opacity: 1;
+}
+
+.rules-modal h3 {
+  color: hsl(229, 25%, 31%);
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 0 0 30px;
+}
+
+.rules-modal img {
+  max-width: 100%;
+}
+
+.rules-modal .close {
+  cursor: pointer;
+  display: block;
+  margin: 100px auto 0;
+  border: none;
+  background: transparent;
+}
+@media (min-width: 950px) {
+  .desktop-layout {
+    display: flex;
+  }
+
+  .mobile-layout {
+    display: none;
+  }
+}
+@media (min-width: 650px) {
+  header h1 {
+    font-size: 2.6rem;
+  }
+
+  .game-step1 {
+    background-position: center 80px;
+  }
+  .gradient-border {
+    height: 160px;
+    width: 160px;
+  }
+
+  .game-step2 {
+    column-gap: 100px;
+  }
+  .game-step2 h3 span {
+    display: inline;
+  }
+  .game-step2 .choice-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+  }
+  .game-step2 .gradient-border {
+    height: 250px;
+    width: 250px;
+  }
+
+  .game-step2 h3 {
+    font-size: 1.8rem;
+  }
+
+  .game-step2 .gradient-border img {
+    width: 50%;
+  }
+
+  .game-step2 .gray-circle {
+    width: 190px;
+    height: 190px;
+  }
+}
+
+@media (min-width: 550px) {
+  .rules-modal {
+    height: auto;
+    border-radius: 20px;
+  }
+}

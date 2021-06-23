@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript RPS Game</title>
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>
+        <span>Rock</span>
+        <span>Paper</span>
+        <span>Scissors</span>
+      </h1>
+
+      <div class="score-container">
+        <h4>Score</h4>
+        <h1 class="score">0</h1>
+      </div>
+    </header>
+
+    <!-- GAME STEP1 : User Selection -->
+    <div class="game-step1">
+      <div class="gradient-border paper" data-choice="paper">
+        <div class="img-container">
+          <img src="./images/icon-paper.svg" alt="Paper Icon" />
+        </div>
+      </div>
+
+      <div class="gradient-border scissors" data-choice="scissors">
+        <div class="img-container">
+          <img src="./images/icon-scissors.svg" alt="Scissors Icon" />
+        </div>
+      </div>
+
+      <div class="gradient-border rock" data-choice="rock">
+        <div class="img-container">
+          <img src="./images/icon-rock.svg" alt="Rock Icon" />
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME STEP2 : Displaying Results -->
+    <div class="game-step2">
+      <div class="desktop-layout">
+        <div class="choice-container user-choice">
+          <h3>You picked</h3>
+          <div class="big-circle-container">
+            <div class="gradient-border">
+              <div class="img-container">
+                <img src="./images/icon-paper.svg" alt="Paper Icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result-container">
+          <h1 class="result">You Win</h1>
+          <button class="play-again">Play Again</button>
+        </div>
+        <div class="choice-container pc-choice">
+          <h3>The house <span>picked</span></h3>
+          <div class="big-circle-container computer-choice">
+            <div class="gradient-border">
+              <div class="img-container">
+                <img src="./images/icon-scissors.svg" alt="Scissors Icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-layout">
+        <div class="choices-container">
+          <div class="choice-container user-choice">
+            <h3>You picked</h3>
+            <div class="big-circle-container">
+              <div class="gradient-border">
+                <div class="img-container">
+                  <img src="./images/icon-paper.svg" alt="Paper Icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="choice-container pc-choice">
+            <h3>The house <span>picked</span></h3>
+            <div class="big-circle-container computer-choice">
+              <div class="gradient-border">
+                <div class="img-container">
+                  <img src="./images/icon-scissors.svg" alt="Scissors Icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-container">
+          <h1 class="result">You Win</h1>
+          <button class="play-again">Play Again</button>
+        </div>
+      </div>
+    </div>
+    <!-- RULES -->
+    <button class="rules-btn">Rules</button>
+    <div class="rules-modal-container">
+      <div class="rules-modal">
+        <h3>Rules</h3>
+        <div class="img-container">
+          <img src="./images/image-rules.svg" alt="Game Rules" />
+        </div>
+        <button class="close">
+          <img src="./images/icon-close.svg" alt="Close Button" />
+        </button>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+  </body>
+</html>
